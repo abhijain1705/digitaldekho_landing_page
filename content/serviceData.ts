@@ -1,6 +1,6 @@
 const cardData = [
     {
-        img: '/pages/assets/images/smm.png',
+        img: '/assets/images/smm.png',
         title: 'Social Media Marketing'
     },
     {
