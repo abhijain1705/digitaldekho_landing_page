@@ -1,0 +1,251 @@
+.navbar {
+  width: 100vw;
+  display: flex;
+  padding: 15px 50px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+}
+
+.logo {
+  width: 100px;
+  height: 80px;
+}
+
+.bg-color-small {
+  background-color: #2f58cd;
+}
+
+.bg-color-big {
+  background-color: white;
+}
+
+.text-placeholder,
+.last-placeholder {
+  position: relative; /* needed for pseudo-element */
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: bolder;
+  transition: color 0.2s ease-in-out; /* smooth color transition */
+}
+
+.last-placeholder {
+  border: 1px solid #2f58cd;
+}
+
+.text-placeholder::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 0.2s ease-in-out; /* smooth width transition */
+}
+
+.text-placeholder:hover {
+  color: #000; /* change text color on hover */
+}
+
+.text-placeholder:hover::after {
+  width: 100%; /* expand underline on hover */
+}
+
+
+.last-placeholder {
+  transition: color 0.2s ease-in-out, border-color 0.5s ease-in-out; /* add border transition */
+  border: 1px solid #9c1aff;
+}
+
+.last-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #2f58cd;
+  opacity: 0.8;
+  transition: height 0.5s linear;
+  transform-origin: bottom;
+  z-index: -1;
+}
+
+.last-placeholder:hover::before {
+  height: 100%;
+}
+
+.last-placeholder:hover {
+  border-color: transparent; /* make the border transparent on hover */
+}
+
+.text-placeholder span {
+  margin-right: 10px;
+}
+
+.sideNavbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.navList {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  padding: 20px;
+}
+
+.big-screen-navList {
+  display: flex;
+  width: max-content;
+}
+
+.navRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.toggleBtn {
+  border-width: 0px;
+  outline: none;
+  position: absolute;
+  top: 17px;
+  left: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.toggleBtn:focus {
+  outline: none;
+}
+
+.background {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height:  100vh;
+}
+
+.hamburger {
+  padding: 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+  z-index: 2;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: black;
+}
+
+.hamburger-box {
+  width: 35px;
+  height: 21px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: 0px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -10px;
+}
+
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+.hamburger--elastic .hamburger-inner {
+  top: 2px;
+  transition-duration: 0.275s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic .hamburger-inner::before {
+  top: 10px;
+  transition: opacity 0.125s 0.275s ease;
+}
+
+.hamburger--elastic .hamburger-inner::after {
+  top: 20px;
+  transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(135deg);
+  transition-delay: 0.075s;
+}
+
+.hamburger--elastic.is-active .hamburger-inner::before {
+  transition-delay: 0s;
+  opacity: 0;
+}
+
+.hamburger--elastic.is-active .hamburger-inner::after {
+  transform: translate3d(0, -20px, 0) rotate(-270deg);
+  transition-delay: 0.075s;
+}

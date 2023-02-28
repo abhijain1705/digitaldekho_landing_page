@@ -1,0 +1,147 @@
+.testimonial {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 4rem;
+  flex-direction: column;
+  align-items: center;
+  min-height: 500px;
+  justify-content: space-evenly;
+}
+
+.testimonial h1 {
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+.testimonials-slider {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  position: relative;
+  overflow-x: scroll;
+}
+
+.testimonials-slider .black_background {
+  width: 80%;
+  white-space: initial;
+  transform: translateX(0%);
+  transition: transform 0.5s ease-in-out;
+  height: 90%;
+  background-color: black;
+  flex-shrink: 0;
+  border-radius: 12px;
+  color: white;
+  margin: 20px 100px;
+  position: relative;
+  overflow: visible;
+}
+
+.testimonials-slider::-webkit-scrollbar,
+.black_background::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.test-card {
+  width: 100%;
+  white-space: initial;
+  transform: translateX(0%);
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  background-color: #645cbb;
+  flex-shrink: 0;
+  border-radius: 12px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  z-index: 1;
+  color: white;
+  overflow: hidden;
+  display: flex;
+}
+
+.test-card .test-image-section {
+  width: 40%;
+  height: 100%;
+}
+
+.test-card .test-image-section .img {
+  height: 100%;
+}
+
+.test-card .test-name-section {
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.test-card .test-name-section p {
+  line-height: 27px;
+  letter-spacing: 1px;
+}
+
+.test-card .test-name-section span, .test-card .test-image-section span {
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  padding: 12px;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 1330px) {
+  .testimonials-slider {
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 1051px) {
+  .testimonials-slider {
+    height: 450px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .testimonials-slider {
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .testimonials-slider {
+    height: 700px;
+  }
+  .test-card {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .test-card .test-image-section {
+    height: 200px;
+  }
+
+  .test-card .test-image-section .img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    border-radius: 8px;
+  }
+
+  .test-card .test-image-section span {
+    top: 50px;
+    right: 20px;
+    max-height: 40px;
+  }
+}
+
+@media only screen and (max-width: 565px) {
+  .testimonials-slider {
+    height: 800px;
+  }
+  .test-card .test-image-section .img {
+    width: 100%;
+  }
+}
